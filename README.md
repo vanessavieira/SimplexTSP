@@ -29,46 +29,56 @@ Express all the conditions implicitly established by the nature of the variables
 Determine the objective function:
 - Minimize Z = 12 XAB + 4 XAC + 5 XBD + 3 XBE + 2 XCD + 10 XCF + 5 XDB + 2 XDC + 10 XDE + 3 XEB + 10 XED + 2 XEG + 10 XFC + 4 XFG
 
+Given that:
+
+- 1 X1 + 1 X2 + 0 X3 + 0 X4 + 0 X5 + 0 X6 + 0 X7 + 0 X8 + 0 X9 + 0 X10 + 0 X11 + 0 X12 + 0 X13 + 0 X14 = 1
+- -1 X1 + 0 X2 + 1 X3 + 1 X4 -1 X5 -1 X6 + 0 X7 + 0 X8 + 0 X9 + 0 X10 + 0 X11 + 0 X12 + 0 X13 + 0 X14 = 0
+- 0 X1 -1 X2 + 0 X3 + 0 X4 + 0 X5 + 0 X6 + 1 X7 + 1 X8 -1 X9 -1 X10 + 0 X11 + 0 X12 + 0 X13 + 0 X14 = 0
+- 0 X1 + 0 X2 + 0 X3 -1 X4 + 1 X5 + 0 X6 -1 X7 + 0 X8 + 0 X9 + 1 X10 + 1 X11 -1 X12 + 0 X13 + 0 X14 = 0
+- 0 X1 + 0 X2 -1 X3 + 0 X4 + 0 X5 + 1 X6 + 0 X7 + 0 X8 + 0 X9 + 0 X10 -1 X11 + 1 X12 + 1 X13 + 0 X14 = 0
+- 0 X1 + 0 X2 + 0 X3 + 0 X4 + 0 X5 + 0 X6 + 0 X7 -1 X8 + 1 X9 + 0 X10 + 0 X11 + 0 X12 + 0 X13 + 1 X14 = 0
+- 0 X1 + 0 X2 + 0 X3 + 0 X4 + 0 X5 + 0 X6 + 0 X7 + 0 X8 + 0 X9 + 0 X10 + 0 X11 + 0 X12 -1 X13 -1 X14 = -1
+
 Make a change of variables with the following match:
 
-Roads | After Change
----------|----------
-    XAB | X1
-    XAC | X2
-    XBE | X3
-    XBD | X4
-    XDB | X5
-    XEB | X6
-    XCD | X7
-    XCF | X8
-    XFC | X9
-    XDC | X10
-    XDE | X11
-    XED | X12
-    XEG | X13
-    XFG | X14
-    
-    
+| Roads | After Change |
+---------|-------------|
+|    XAB | X1          |
+|    XAC | X2          |
+|    XBE | X3          |
+|    XBD | X4          |
+|    XDB | X5          |
+|    XEB | X6          |
+|    XCD | X7          |
+|    XCF | X8          |
+|    XFC | X9          |
+|    XDC | X10         |
+|    XDE | X11         |
+|    XED | X12         |
+|    XEG | X13         |
+|    XFG | X14         |
+
+
   After this, we apply the Simplex method using the SciPy Library and get the following results:
   ```sh
   Shortest path = 16
   ```
-  Roads | Used or not
----------|----------
-    X1 | 0
-    X2 | 1
-    X3 | 1
-    X4 | 0
-    X5 | 1
-    X6 | 0
-    X7 | 1
-    X8 | 0
-    X9 | 0
-    X10 | 0
-    X11 | 0
-    X12 | 0
-    X13 | 1
-    X14 | 0
+|  Roads | Used or not|
+---------|------------
+|    X1 | 0           |
+|    X2 | 1           |
+|    X3 | 1           |
+|    X4 | 0           |
+|    X5 | 1           |
+|    X6 | 0           |
+|    X7 | 1           |
+|    X8 | 0           |
+|    X9 | 0           |
+|    X10 | 0          |
+|    X11 | 0          |
+|    X12 | 0          |
+|    X13 | 1          |
+|    X14 | 0          |
 
 Output:
 ```sh
@@ -80,4 +90,3 @@ status: 0
 success: True
 x: array([0., 1., 1., 0., 1., 0., 1., 0., 0., 0., 0., 0., 1., 0.])
 ```
-  
